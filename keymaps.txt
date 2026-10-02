@@ -1,0 +1,221 @@
+================================================================================
+                         NEOVIM CUSTOM & PLUGIN KEYMAPS
+================================================================================
+Leader Key: <Space>
+Local Leader Key: <Space>
+Generated from your configuration in ~/.config/nvim
+
+--------------------------------------------------------------------------------
+1. GENERAL & WINDOW NAVIGATION
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<Space>       n, v   <Nop> (Disabled default space movement)      init.lua
+<C-h>         n      Go to Left Window / Split                    lua/config/keymaps.lua
+<C-j>         n      Go to Lower Window / Split                   lua/config/keymaps.lua
+<C-k>         n      Go to Upper Window / Split                   lua/config/keymaps.lua
+<C-l>         n      Go to Right Window / Split                   lua/config/keymaps.lua
+<C-h>         i      Go to Left Window (from insert mode)         lua/config/keymaps.lua
+<C-j>         i      Go to Lower Window (from insert mode)        lua/config/keymaps.lua
+<C-k>         i      Go to Upper Window (from insert mode)        lua/config/keymaps.lua
+<C-l>         i      Go to Right Window (from insert mode)        lua/config/keymaps.lua
+<C-h>         t      Go to Left Window (from terminal mode)       lua/config/keymaps.lua
+<C-j>         t      Go to Lower Window (from terminal mode)      lua/config/keymaps.lua
+<C-k>         t      Go to Upper Window (from terminal mode)      lua/config/keymaps.lua
+<C-l>         t      Go to Right Window (from terminal mode)      lua/config/keymaps.lua
+<C-s>         n      Save File                                    lua/config/keymaps.lua
+<C-s>         i      Save File (Remain in Insert Mode)            lua/config/keymaps.lua
+<C-s>         x, v   Save File (Retain Visual Selection)          lua/config/keymaps.lua
+<D-s> (Cmd+S) n      Save File (macOS only)                       lua/config/keymaps.lua
+<D-s> (Cmd+S) i      Save File (Remain in Insert Mode, macOS)     lua/config/keymaps.lua
+<D-s> (Cmd+S) x, v   Save File (Retain Visual Selection, macOS)   lua/config/keymaps.lua
+
+--------------------------------------------------------------------------------
+2. FILE EXPLORER (nvim-tree.lua)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>e     n      Toggle File Explorer                         lua/plugins/nvim-tree.lua
+<leader>E     n      Reveal Current File in Explorer              lua/plugins/nvim-tree.lua
+
+* When inside the File Tree panel:
+q             n      Close Tree (or Exit Vim if last panel)        lua/plugins/nvim-tree.lua
++             n      Increase Panel Width (+5 columns)            lua/plugins/nvim-tree.lua
+=             n      Increase Panel Width (+5 columns)            lua/plugins/nvim-tree.lua
+_             n      Shrink Panel Width (-5 columns, min 15)      lua/plugins/nvim-tree.lua
+<A-l>         n      Increase Panel Width (+5 columns)            lua/plugins/nvim-tree.lua
+<C-Right>     n      Increase Panel Width (+5 columns)            lua/plugins/nvim-tree.lua
+<A-h>         n      Shrink Panel Width (-5 columns)              lua/plugins/nvim-tree.lua
+<C-Left>      n      Shrink Panel Width (-5 columns)              lua/plugins/nvim-tree.lua
+<C-h>         n      Jump to Left Window out of Tree              lua/plugins/nvim-tree.lua
+<C-j>         n      Jump to Lower Window out of Tree             lua/plugins/nvim-tree.lua
+<C-k>         n      Jump to Upper Window out of Tree             lua/plugins/nvim-tree.lua
+<C-l>         n      Jump to Right Window (Code Editor)           lua/plugins/nvim-tree.lua
+(Note: Resized panel size is automatically discarded when tree is hidden/closed)
+(Note: If tree is the last panel open when closed, it exits Vim instead of opening another panel)
+
+--------------------------------------------------------------------------------
+3. FLUTTER & DART (flutter-tools.nvim - Active in Dart buffers)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>fs    n      Flutter: Start / Run (No DAP panels)         lua/plugins/flutter-tools.lua
+<leader>fr    n      Flutter: Hot Reload                          lua/plugins/flutter-tools.lua
+<leader>fR    n      Flutter: Hot Restart                         lua/plugins/flutter-tools.lua
+<leader>fl    n      Flutter: Toggle Dev Log                      lua/plugins/flutter-tools.lua
+<leader>fq    n      Flutter: Quit Running App                    lua/plugins/flutter-tools.lua
+<leader>fe    n      Flutter: Open Emulators Picker               lua/plugins/flutter-tools.lua
+<leader>fd    n      Flutter: Open Devices Picker                 lua/plugins/flutter-tools.lua
+
+--------------------------------------------------------------------------------
+4. LSP & CODE NAVIGATION (nvim-lspconfig)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+K             n      Hover Documentation                          lua/plugins/lsp.lua
+gd            n      Go to Definition (Telescope / Direct)        lua/plugins/lsp.lua
+gD            n      Go to Declaration                            lua/plugins/lsp.lua
+gi / gri       n      Go to Implementation (Telescope)             lua/plugins/lsp.lua
+grr / <leader>lu n    Go to References / Usages (Telescope)        lua/plugins/lsp.lua
+grt           n      Go to Type Definition (Telescope)            lua/plugins/lsp.lua
+gra / <leader>la n   Code Action                                  lua/plugins/lsp.lua
+grn / <leader>lr n   Rename Symbol                                lua/plugins/lsp.lua
+<leader>ls    n      Signature Documentation                      lua/plugins/lsp.lua
+<leader>lf    n, v   Format Buffer (Prettier / LSP fallback)      lua/plugins/lsp.lua
+<leader>ld    n      Show Line Diagnostics (Floating Window)      lua/plugins/lsp.lua
+<leader>lq    n      Diagnostics List (Location List)             lua/plugins/lsp.lua
+[d            n      Jump to Previous Diagnostic                  lua/plugins/lsp.lua
+]d            n      Jump to Next Diagnostic                      lua/plugins/lsp.lua
+
+--------------------------------------------------------------------------------
+5. FORMATTING (conform.nvim)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>lf    n, v   Format Buffer (Prettier with LSP fallback)   lua/plugins/formatting.lua
+
+--------------------------------------------------------------------------------
+6. DEBUGGING (nvim-dap & dap-ui)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>db    n      Toggle Breakpoint                            lua/plugins/dap.lua
+<leader>dB    n      Set Conditional Breakpoint                   lua/plugins/dap.lua
+<leader>dc    n      Continue / Start Debugging                   lua/plugins/dap.lua
+<leader>ds    n      Restart Debug Session                        lua/plugins/dap.lua
+<leader>dt    n      Terminate Debug Session                      lua/plugins/dap.lua
+<leader>di    n      Step Into                                    lua/plugins/dap.lua
+<leader>do    n      Step Over                                    lua/plugins/dap.lua
+<leader>dO    n      Step Out                                     lua/plugins/dap.lua
+<leader>dr    n      Open Debug REPL                              lua/plugins/dap.lua
+<leader>dl    n      Run Last Debug Configuration                 lua/plugins/dap.lua
+<leader>du    n      Toggle DAP UI                                lua/plugins/dap.lua
+<leader>de    n, v   Evaluate Expression                          lua/plugins/dap.lua
+<leader>dgt   n      Debug Go Test                                lua/plugins/dap.lua
+<leader>dgT   n      Debug Go Last Test                           lua/plugins/dap.lua
+<F5>          n      Debug: Continue                              lua/plugins/dap.lua
+<F10>         n      Debug: Step Over                             lua/plugins/dap.lua
+<F11>         n      Debug: Step Into                             lua/plugins/dap.lua
+<F12>         n      Debug: Step Out                              lua/plugins/dap.lua
+
+--------------------------------------------------------------------------------
+7. GO DEVELOPMENT (go.nvim - Active in Go buffers)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>gt    n      Go Test (Package)                            lua/plugins/go.lua
+<leader>gf    n      Go Test Function                             lua/plugins/go.lua
+<leader>gc    n      Go Coverage                                  lua/plugins/go.lua
+<leader>ga    n      Add Struct Tags                              lua/plugins/go.lua
+<leader>gr    n      Remove Struct Tags                           lua/plugins/go.lua
+<leader>ge    n      Generate "if err != nil"                     lua/plugins/go.lua
+<leader>gs    n      Fill Struct                                  lua/plugins/go.lua
+<leader>gi    n      Implement Interface                          lua/plugins/go.lua
+<leader>gd    n      Show Go Doc                                  lua/plugins/go.lua
+
+--------------------------------------------------------------------------------
+8. TERMINAL (toggleterm.nvim)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<C-\>         n, t   Toggle Floating Terminal                     lua/plugins/toggleterm.lua
+<leader>tt    n      Toggle Default Terminal                      lua/plugins/toggleterm.lua
+<leader>tf    n      Open Floating Terminal                       lua/plugins/toggleterm.lua
+<leader>th    n      Open Horizontal Terminal Split (size 15)     lua/plugins/toggleterm.lua
+<leader>tv    n      Open Vertical Terminal Split (size 60)       lua/plugins/toggleterm.lua
+<leader>tg    n      Open Lazygit Floating Terminal               lua/plugins/toggleterm.lua
+<leader>ta    n      Toggle All Open Terminals                    lua/plugins/toggleterm.lua
+<leader>ts    n      Send Current Line to Terminal                lua/plugins/toggleterm.lua
+<leader>ts    x      Send Visual Selection to Terminal            lua/plugins/toggleterm.lua
+<C-w>         t      Terminal Window Passthrough                  lua/plugins/toggleterm.lua
+
+--------------------------------------------------------------------------------
+9. SYNTAX & SELECTION (nvim-treesitter)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<C-space>     n      Init Incremental Selection                   lua/plugins/treesitter.lua
+<C-space>     v      Increment Selection by Node                  lua/plugins/treesitter.lua
+<BS>          v      Decrement Selection by Node                  lua/plugins/treesitter.lua
+
+--------------------------------------------------------------------------------
+10. KEYMAP DISCOVERY (which-key.nvim)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>?     n      Show Buffer-Local Keymaps Popup              lua/plugins/which-key.lua
+
+--------------------------------------------------------------------------------
+11. OPEN FILES NAVIGATION & TELESCOPE (telescope.nvim)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader><space> n     Switch Open File / Buffer (Telescope)        lua/plugins/telescope.lua
+<leader>bb    n      List Open Files / Buffers (Telescope)        lua/plugins/telescope.lua
+<leader>bd    n      Close Current File / Buffer                  lua/plugins/telescope.lua
+<leader>ff    n      Find File by Name (Telescope)                lua/plugins/telescope.lua
+<leader>sf    n      Find File by Name (alias)                    lua/plugins/telescope.lua
+<leader>fg    n      Find Text on Files (Telescope Live Grep)     lua/plugins/telescope.lua
+<leader>sg    n      Find Text on Files (alias)                   lua/plugins/telescope.lua
+
+* Inside the Telescope Open Files list:
+<C-j> / <C-k> i      Navigate Up / Down through open files
+<C-d> / <C-x> i      Close / Delete highlighted file from list
+dd / d / x    n      Close / Delete highlighted file from list
+<CR>          i, n   Jump to selected file
+<Esc> / <C-c> i, n   Exit picker
+
+--------------------------------------------------------------------------------
+12. AUTOCOMPLETION & LSP SUGGESTIONS (blink.cmp)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<Tab>         i, s   Next Suggestion / Jump to Next Snippet Var   lua/plugins/completion.lua
+<S-Tab>       i, s   Prev Suggestion / Jump to Prev Snippet Var   lua/plugins/completion.lua
+<C-n>         i      Select Next Suggestion                       lua/plugins/completion.lua
+<C-p>         i      Select Previous Suggestion                   lua/plugins/completion.lua
+<CR>          i      Confirm Selected Suggestion                  lua/plugins/completion.lua
+<C-y>         i      Quick Confirm Top Suggestion                 lua/plugins/completion.lua
+<C-Space>     i      Manually Trigger Suggestions Menu            lua/plugins/completion.lua
+<C-e>         i      Abort / Close Suggestions Menu               lua/plugins/completion.lua
+<C-b>         i      Scroll Documentation Popup Backward (Up)     lua/plugins/completion.lua
+<C-f>         i      Scroll Documentation Popup Forward (Down)    lua/plugins/completion.lua
+
+--------------------------------------------------------------------------------
+13. GIT SIGNS & BLAME (gitsigns.nvim)
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+]c            n      Next Git Change / Hunk                       lua/plugins/gitsigns.lua
+[c            n      Previous Git Change / Hunk                   lua/plugins/gitsigns.lua
+<leader>gb    n      Toggle Inline Git Blame (GitLens style)      lua/plugins/gitsigns.lua
+<leader>tb    n      Toggle Inline Git Blame (alias)              lua/plugins/gitsigns.lua
+<leader>gB    n      Git: Blame Popup (Full commit info)          lua/plugins/gitsigns.lua
+<leader>gp    n      Git: Preview Change / Hunk (diff float)      lua/plugins/gitsigns.lua
+<leader>gD    n      Git: Diff File Against Index                 lua/plugins/gitsigns.lua
+<leader>gS    n      Git: Stage Current Change / Hunk             lua/plugins/gitsigns.lua
+<leader>gU    n      Git: Undo / Reset Change / Hunk              lua/plugins/gitsigns.lua
+================================================================================
+
+
+
