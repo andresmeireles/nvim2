@@ -142,7 +142,7 @@ return {
       require("mason").setup(opts)
       local mr = require("mason-registry")
       local function ensure_installed()
-        for _, tool in ipairs({ "prettier" }) do
+        for _, tool in ipairs({ "prettier", "pint", "php-cs-fixer", "blade-formatter" }) do
           local p = mr.get_package(tool)
           if not p:is_installed() then
             p:install()

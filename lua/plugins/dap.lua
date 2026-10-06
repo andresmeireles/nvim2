@@ -68,9 +68,37 @@ return {
     cmd = { "DapInstall", "DapUninstall" },
     opts = {
       automatic_installation = true,
-      handlers = {},
+      handlers = {
+        php = function(config)
+          local function root()
+            return vim.fs.root(0, { "composer.json", ".git" }) or vim.fn.getcwd()
+          end
+          config.configurations = {
+            {
+              type = "php",
+              request = "launch",
+              name = "PHP: Listen for Xdebug",
+              hostname = "127.0.0.1",
+              port = 9003,
+              cwd = root,
+            },
+            {
+              type = "php",
+              request = "launch",
+              name = "PHP: Debug current script",
+              program = "${file}",
+              cwd = root,
+              port = 9003,
+              runtimeExecutable = "php",
+              runtimeArgs = { "-dxdebug.mode=debug", "-dxdebug.start_with_request=yes" },
+            },
+          }
+          require("mason-nvim-dap").default_setup(config)
+        end,
+      },
       ensure_installed = {
         "delve",
+        "php",
       },
     },
   },

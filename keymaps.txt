@@ -221,3 +221,55 @@ Key           Mode   Action / Description                         Source
 
 
 
+--------------------------------------------------------------------------------
+14. PHP & LARAVEL
+--------------------------------------------------------------------------------
+Key           Mode   Action / Description                         Source
+--------------------------------------------------------------------------------
+<leader>aa    n      Laravel: Artisan Command Picker              lua/plugins/laravel.lua
+<leader>ar    n      Laravel: Routes / Jump to Controller          lua/plugins/laravel.lua
+<leader>am    n      Laravel: Generate Class (make:*)              lua/plugins/laravel.lua
+<leader>af    n      Laravel: Project Resources                    lua/plugins/laravel.lua
+<leader>ac    n      Laravel: Composer Command Picker              lua/plugins/laravel.lua
+<leader>at    n      Laravel: Tinker                               lua/plugins/laravel.lua
+<leader>av    n      Laravel: Find View / Usages                    lua/plugins/laravel.lua
+<leader>ae    n      Laravel: Choose Local / Sail / Herd / Valet    lua/plugins/laravel.lua
+<leader>pt    n      PHP: Run Test Suite                           lua/plugins/php.lua
+<leader>pf    n      PHP: Run Current Test File                    lua/plugins/php.lua
+<leader>lf    n, v   Format PHP / Blade                            lua/plugins/formatting.lua
+<F5>          n      PHP: Listen for Xdebug / Debug CLI Script     lua/plugins/dap.lua
+
+PHP and Blade use Phpantom for completion, navigation, refactoring and diagnostics.
+The normal LSP shortcuts (K, gd, grr, <leader>la, <leader>lr) work in these files.
+The startup screen recognizes composer.json and artisan as project markers.
+PHP, Blade, embedded PHP and PHPDoc have Tree-sitter highlighting. Blade also has
+Tailwind CSS and Emmet completion. PHP and Blade default to four-space indentation;
+project .editorconfig settings still apply.
+
+On save, Laravel projects use Pint; other PHP projects use PHP-CS-Fixer. Project
+vendor/bin formatters take precedence over Mason tools. Blade uses blade-formatter.
+Install project dependencies with Composer before using Laravel commands. Laravel
+shortcuts select the project's root as the current tab's working directory.
+Tests use Artisan in Laravel, otherwise project-local Pest, then PHPUnit. Test
+shortcuts save named modified buffers first. With Sail/Herd, choose the runtime
+using <leader>ae; Artisan tests follow that selection.
+
+Mason installs phpantom_lsp, pint, php-cs-fixer, blade-formatter and the PHP debug
+adapter automatically. Tree-sitter installs the PHP/Blade parsers automatically.
+Check installations with :Mason, :LspInfo, :ConformInfo and :TSInstallInfo.
+
+For deeper static analysis, use project-local PHPStan, or Larastan in Laravel.
+Phpantom detects supported Composer dependencies and phpstan.neon configuration;
+no separate lint plugin is needed. Configuration reference:
+https://github.com/PHPantom-dev/phpantom_lsp/blob/main/docs/configuration.md
+
+Xdebug must be installed and enabled in the PHP runtime (not provided by Mason):
+  xdebug.mode=debug
+  xdebug.start_with_request=trigger
+  xdebug.client_host=127.0.0.1
+  xdebug.client_port=9003
+Start the "PHP: Listen for Xdebug" configuration with F5, then trigger a request
+with XDEBUG_TRIGGER=1. For CLI, use "PHP: Debug current script". Container/remote
+projects can define pathMappings and host settings in .vscode/launch.json, loaded
+by nvim-dap. Configure Xdebug's client_host to reach your Mac from the container.
+================================================================================

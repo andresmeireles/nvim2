@@ -10,6 +10,7 @@ return {
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
         statusline = {
+          "startup",
           "toggleterm",
           "terminal",
           "NvimTree",
@@ -24,6 +25,7 @@ return {
           "flutter_tools_log",
         },
         winbar = {
+          "startup",
           "toggleterm",
           "terminal",
           "NvimTree",

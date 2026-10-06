@@ -80,6 +80,8 @@ return {
             opts = {
               extended_filetypes = {
                 dart = { "flutter" },
+                php = { "phpdoc" },
+                blade = { "html", "php", "phpdoc" },
               },
             },
           },

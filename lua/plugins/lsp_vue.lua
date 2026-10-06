@@ -38,6 +38,7 @@ return {
 
       opts.servers.tailwindcss = {
         filetypes = {
+          "blade",
           "html",
           "css",
           "scss",
@@ -50,6 +51,7 @@ return {
         settings = {
           tailwindCSS = {
             includeLanguages = {
+              blade = "html",
               vue = "html",
             },
             classAttributes = {
@@ -73,6 +75,7 @@ return {
 
       opts.servers.emmet_language_server = {
         filetypes = {
+          "blade",
           "css",
           "eruby",
           "html",

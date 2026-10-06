@@ -33,6 +33,7 @@ return {
   opts = {
     ensure_installed = {
       "bash",
+      "blade",
       "c",
       "css",
       "dart",
@@ -47,6 +48,9 @@ return {
       "luadoc",
       "markdown",
       "markdown_inline",
+      "php",
+      "php_only",
+      "phpdoc",
       "query",
       "tsx",
       "typescript",

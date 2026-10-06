@@ -20,6 +20,8 @@ return {
       { "<leader>f", group = "Flutter / Find" },
       { "<leader>s", group = "Search / Find" },
       { "<leader>b", group = "Buffers" },
+      { "<leader>a", group = "Laravel" },
+      { "<leader>p", group = "PHP / Tests" },
       { "<leader>x", group = "Diagnostics" },
     },
   },
