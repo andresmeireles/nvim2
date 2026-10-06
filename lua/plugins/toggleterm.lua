@@ -84,7 +84,7 @@ return {
       pattern = "term://*",
       callback = function()
         set_terminal_keymaps()
-        vim.opt_local.statusline = "%#Normal# "
+        vim.opt_local.statusline = '%#ModeMsg# %{mode() ==# "t" ? "-- TERMINAL --" : "-- NORMAL --"} %*'
       end,
     })
 

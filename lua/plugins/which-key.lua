@@ -7,6 +7,9 @@ return {
   end,
   opts = {
     preset = "modern",
+    win = {
+      no_overlap = false,
+    },
     spec = {
       { "<leader>e", desc = "Toggle Explorer" },
       { "<leader>E", desc = "Reveal File in Explorer" },

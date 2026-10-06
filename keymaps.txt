@@ -60,6 +60,8 @@ _             n      Shrink Panel Width (-5 columns, min 15)      lua/plugins/nv
 Key           Mode   Action / Description                         Source
 --------------------------------------------------------------------------------
 <leader>fs    n      Flutter: Start / Run (No DAP panels)         lua/plugins/flutter-tools.lua
+<leader>fa    n      Flutter: Attach to Running App               lua/plugins/flutter-tools.lua
+<leader>fD    n      Flutter: Detach Session                      lua/plugins/flutter-tools.lua
 <leader>fr    n      Flutter: Hot Reload                          lua/plugins/flutter-tools.lua
 <leader>fR    n      Flutter: Hot Restart                         lua/plugins/flutter-tools.lua
 <leader>fl    n      Flutter: Toggle Dev Log                      lua/plugins/flutter-tools.lua
