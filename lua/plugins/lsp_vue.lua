@@ -35,6 +35,60 @@ return {
       opts.servers.vue_ls = {
         filetypes = { "vue" },
       }
+
+      opts.servers.tailwindcss = {
+        filetypes = {
+          "html",
+          "css",
+          "scss",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
+        },
+        settings = {
+          tailwindCSS = {
+            includeLanguages = {
+              vue = "html",
+            },
+            classAttributes = {
+              "class",
+              "className",
+              ":class",
+              "v-bind:class",
+              "class:list",
+              "classList",
+              "ngClass",
+            },
+            experimental = {
+              classRegex = {
+                { "(?:cva|clsx|cn|tw|statusClass)\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { ":class=[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*).*?[\"'`]" },
+              },
+            },
+          },
+        },
+      }
+
+      opts.servers.emmet_language_server = {
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "svelte",
+          "typescriptreact",
+          "vue",
+        },
+        init_options = {
+          showSuggestionsAsSnippets = true,
+          showExpandedAbbreviation = "always",
+        },
+      }
     end,
   },
 }

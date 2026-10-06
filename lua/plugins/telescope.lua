@@ -5,9 +5,11 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
+      "folke/trouble.nvim",
     },
     opts = function()
       local actions = require("telescope.actions")
+      local open_with_trouble = require("trouble.sources.telescope").open
       return {
         defaults = {
           prompt_prefix = "   ",
@@ -28,6 +30,11 @@ return {
             i = {
               ["<C-j>"] = actions.move_selection_next,
               ["<C-k>"] = actions.move_selection_previous,
+              -- Push the current picker's results into the Trouble panel
+              ["<C-t>"] = open_with_trouble,
+            },
+            n = {
+              ["<C-t>"] = open_with_trouble,
             },
           },
         },

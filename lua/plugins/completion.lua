@@ -26,7 +26,7 @@ return {
           border = "rounded",
           winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
           draw = {
-            treesitter = { "lsp" },
+            treesitter = {},
             columns = {
               { "kind_icon" },
               { "label", "label_description", gap = 1 },
@@ -44,6 +44,9 @@ return {
           },
         },
       },
+      fuzzy = {
+        sorts = { "exact", "score", "sort_text" },
+      },
       signature = {
         enabled = true,
         window = {
@@ -57,6 +60,16 @@ return {
           lsp = {
             fallbacks = { "buffer" },
             score_offset = 10,
+            transform_items = function(_, items)
+              -- Demote Tailwind variant modifiers (*:, not-[], first-letter:, etc.)
+              -- so base utility classes (flex, bg-..., mt-...) appear first
+              for _, item in ipairs(items) do
+                if item.client_name == "tailwindcss" and item.sortText and item.sortText:sub(1, 1) == "-" then
+                  item.sortText = "9" .. item.sortText:sub(2)
+                end
+              end
+              return items
+            end,
           },
           buffer = {
             score_offset = -5,

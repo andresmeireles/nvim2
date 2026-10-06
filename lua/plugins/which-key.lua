@@ -20,6 +20,7 @@ return {
       { "<leader>f", group = "Flutter / Find" },
       { "<leader>s", group = "Search / Find" },
       { "<leader>b", group = "Buffers" },
+      { "<leader>x", group = "Diagnostics" },
     },
   },
   keys = {
