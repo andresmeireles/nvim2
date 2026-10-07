@@ -28,6 +28,9 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Reserve a fixed gutter so Git/debug signs never shift the code horizontally.
+vim.opt.signcolumn = "yes"
+
 -- completion options
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 

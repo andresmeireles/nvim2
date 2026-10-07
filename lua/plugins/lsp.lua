@@ -14,7 +14,8 @@ return {
           spacing = 2,
           prefix = "●",
         },
-        signs = true,
+        -- Diagnostics are shown in lualine; keep their letters out of the gutter.
+        signs = false,
         underline = true,
         update_in_insert = false,
         severity_sort = true,
